@@ -31,3 +31,10 @@ logger.info('***********************')
 
 for i, team in enumerate(league.standings()):
     logger.info(f'{i+1}. {team.team_name}')
+
+
+logger.info('')
+logger.info('')
+
+top_scoring_team = league.top_scorer()
+logger.info(f'Top scoring team: {top_scoring_team.team_name} - {round(top_scoring_team.points_for, 1)}')
