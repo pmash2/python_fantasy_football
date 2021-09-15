@@ -25,3 +25,9 @@ year = 2020
 league = League(league_id, year, espn_s2, swid)
 
 logger.info(f'Fantasy League info for the {year} season')
+logger.info('***********************')
+logger.info('FINAL STANDINGS')
+logger.info('***********************')
+
+for i, team in enumerate(league.standings()):
+    logger.info(f'{i+1}. {team.team_name}')
