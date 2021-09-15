@@ -23,3 +23,5 @@ swid = config.swid
 espn_s2 = config.espn_s2
 year = 2020
 league = League(league_id, year, espn_s2, swid)
+
+logger.info(f'Fantasy League info for the {year} season')
