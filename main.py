@@ -1,5 +1,6 @@
 import logging
 import config
+from ff_espn_api import League
 
 logger = logging.getLogger('main.logger')
 logger.setLevel('DEBUG')
@@ -20,3 +21,5 @@ logger.error('Error message')
 league_id = config.league_id
 swid = config.swid
 espn_s2 = config.espn_s2
+year = 2020
+league = League(league_id, year, espn_s2, swid)
