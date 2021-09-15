@@ -1,4 +1,5 @@
 import logging
+import config
 
 logger = logging.getLogger('main.logger')
 logger.setLevel('DEBUG')
@@ -15,3 +16,7 @@ stderr_log_handler.setFormatter(formatter)
 
 logger.info('Info message')
 logger.error('Error message')
+
+league_id = config.league_id
+swid = config.swid
+espn_s2 = config.espn_s2
