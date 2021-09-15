@@ -15,9 +15,6 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 file_log_handler.setFormatter(formatter)
 stderr_log_handler.setFormatter(formatter)
 
-logger.info('Info message')
-logger.error('Error message')
-
 league_id = config.league_id
 swid = config.swid
 espn_s2 = config.espn_s2
