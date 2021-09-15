@@ -1,5 +1,6 @@
 import logging
 import config
+import pandas as pd
 from ff_espn_api import League
 
 logger = logging.getLogger('main.logger')
@@ -37,3 +38,14 @@ logger.info('')
 top_scoring_team = league.top_scorer()
 logger.info(
     f'Top scoring team: {top_scoring_team.team_name} - {round(top_scoring_team.points_for, 1)}')
+
+league_2020 = pd.DataFrame()
+df_columns = list(league.teams[0].__dict__.keys())
+df_columns.remove('roster')
+df_columns.remove('owner')
+
+for d in range(len(league.teams)):
+    team_df = pd.DataFrame(league.teams[d].__dict__,
+                           columns=df_columns)
+    league_2020 = league_2020.append(team_df)
+logger.info(league_2020.to_html())
