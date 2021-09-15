@@ -11,7 +11,8 @@ logger.addHandler(file_log_handler)
 stderr_log_handler = logging.StreamHandler()
 logger.addHandler(stderr_log_handler)
 
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_log_handler.setFormatter(formatter)
 stderr_log_handler.setFormatter(formatter)
 
@@ -34,4 +35,5 @@ logger.info('')
 logger.info('')
 
 top_scoring_team = league.top_scorer()
-logger.info(f'Top scoring team: {top_scoring_team.team_name} - {round(top_scoring_team.points_for, 1)}')
+logger.info(
+    f'Top scoring team: {top_scoring_team.team_name} - {round(top_scoring_team.points_for, 1)}')
